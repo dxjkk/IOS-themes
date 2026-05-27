@@ -1831,3 +1831,27 @@ body.dark .stats-value{-webkit-text-fill-color:var(--text-accent)}
     .liquid-glass{background:var(--card-bg);-webkit-backdrop-filter:none;backdrop-filter:none}
     .liquid-glass::before,.liquid-glass::after{display:none}
 }
+
+
+/* ===== WWDC2025 Bento Liquid Glass Restyle ===== */
+:root{--hero-grad:linear-gradient(120deg,#8fb2ff 0%,#9f8cff 50%,#78d7ff 100%);--highlight-blue:rgba(120,174,255,.36);--highlight-purple:rgba(166,132,255,.34);--highlight-cyan:rgba(86,219,255,.30);}
+body{color:#fff;background:linear-gradient(rgba(10,14,30,.35),rgba(10,14,30,.35)),url("https://i.ibb.co/xtN61cRf/Comfy-UI-Output-4-1.png") center/cover fixed no-repeat !important;}
+body::before{background:radial-gradient(circle 680px at 10% 10%,var(--highlight-blue),transparent),radial-gradient(circle 540px at 85% 16%,var(--highlight-purple),transparent),radial-gradient(circle 500px at 55% 92%,var(--highlight-cyan),transparent)!important;}
+.layout-grid{max-width:1920px;margin:0 auto;grid-template-columns:minmax(220px,1fr) minmax(760px,1.8fr) minmax(280px,1fr);}
+.header,.nav-section,.main-content,.footer{position:relative;z-index:2;}
+.liquid-glass,.glass-card,.article-card,.sidebar-card,.widget-card,.header-inner,.search-panel,.nav-expand-panel,.mobile-dock,.sheet-container{position:relative;overflow:hidden;padding:.6rem;border-radius:2rem;background:rgba(255,255,255,.12)!important;border:1px solid rgba(255,255,255,.28)!important;box-shadow:0 6px 6px rgba(0,0,0,.25),0 0 24px rgba(113,164,255,.25)!important;transition:all .4s cubic-bezier(.175,.885,.32,2.2)!important;}
+.liquid-glass:hover,.glass-card:hover,.article-card:hover,.sidebar-card:hover{padding:.8rem;transform:translateY(-4px) scale(1.01);border-radius:2.5rem;}
+.liquid-glass::before,.glass-card::before,.article-card::before,.sidebar-card::before{content:"";position:absolute;inset:0;z-index:0;backdrop-filter:blur(3px);filter:url(#glass-distortion);}
+.liquid-glass::after,.glass-card::after,.article-card::after,.sidebar-card::after{content:"";position:absolute;inset:0;z-index:1;background:rgba(255,255,255,.2);box-shadow:inset 2px 2px 1px rgba(255,255,255,.6),inset -1px -1px 1px rgba(255,255,255,.45);}
+.liquid-glass>*,.glass-card>*,.article-card>*,.sidebar-card>*{position:relative;z-index:3;}
+.logo-text,.article-content h2,.post-full-title{font-weight:900;letter-spacing:-.03em;color:#fff;}
+.article-content h2,.post-full-title{font-size:clamp(2rem,4.2vw,4.8rem);line-height:1.02;}
+.article-meta,.article-excerpt,.footer-tagline,.footer-copy,.nav-btn-label,.category-pill,.search-input,.post-full-content,.sidebar-card,.widget-card{color:rgba(255,255,255,.88)!important;}
+.tag-featured,.article-tags span,.card-title,.stats-value{background:var(--hero-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;font-weight:800;}
+.nav-grid,.article-feed{display:grid;gap:18px;}
+.nav-grid{grid-template-columns:repeat(auto-fit,minmax(110px,1fr));}
+.nav-btn{border:1px solid rgba(255,255,255,.26);background:rgba(255,255,255,.08);}
+.nav-btn-icon{font-size:1.1rem;}
+.reveal,.reveal-scale{transition:transform .5s ease,filter .5s ease;}
+.reveal:hover,.reveal-scale:hover{filter:drop-shadow(0 0 26px rgba(130,174,255,.45));}
+@media (max-width:767px){.article-content h2,.post-full-title{font-size:clamp(1.8rem,9vw,2.8rem);}body{background-attachment:scroll !important;}}
