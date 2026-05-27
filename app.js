@@ -30,12 +30,12 @@ const App = {
             grid.innerHTML =
                 visible.map(l => `
                     <a href="${l.url || '#'}" class="nav-btn" target="_blank" rel="noopener">
-                        <span class="nav-btn-icon">${l.icon || '📎'}</span>
+                        <span class="nav-btn-icon">${l.icon || '<i class="fas fa-link"></i>'}</span>
                         <span class="nav-btn-label">${l.label || ''}</span>
                     </a>
                 `).join("") +
                 '<button class="nav-btn nav-btn-more" id="navMoreBtn" aria-label="展开导航">' +
-                    '<span class="nav-btn-icon">···</span>' +
+                    '<span class="nav-btn-icon"><i class="fas fa-ellipsis-h"></i></span>' +
                     '<span class="nav-btn-label">更多</span>' +
                 '</button>';
 
@@ -47,7 +47,7 @@ const App = {
             if (allLinks.length) {
                 expandGrid.innerHTML = allLinks.map(l => `
                     <a href="${l.url || '#'}" class="nav-btn" target="_blank" rel="noopener">
-                        <span class="nav-btn-icon">${l.icon || '📎'}</span>
+                        <span class="nav-btn-icon">${l.icon || '<i class="fas fa-link"></i>'}</span>
                         <span class="nav-btn-label">${l.label || ''}</span>
                     </a>
                 `).join("");
